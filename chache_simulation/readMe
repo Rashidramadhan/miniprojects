@@ -1,0 +1,46 @@
+Am using python 3.8
+MAKE SURE
+You have python installed
+you have python request installed
+you have installed  python statistics
+i have implemented cache technique using the python module for handling chache called cachetools. the requested resources are stored in the
+newly created chache for period of one day using TimeToSleep of a full day(the arguments in TTLChache varies and can be changed as you desire in my case is 1 day)
+we have to methods one for direct mode and the other one for proxy mode with a @chaced decorator
+
+ i import SimpleHTTPRequestHandler to handle the HTTP requests in simulating the server requests
+ you need to run the server first before running the client machine. the server runs on a locahost port 8080 can you can use a different unused port.
+ both files clients and server should reside in one directory.
+ you can follow the comments on the files for understand the codes
+
+
+ on the client side we i have two method one for direct and the other for proxy, the proxy method runs the
+ request that were stored in our chache both the two modes run similar request but i have imply a delay time
+  in direct method to simulate the real server obstacles. The output should clear show to difference between
+   the two modes. it looks like the proxy mode is much faster as compared to direct mode
+
+EXPECTED OUTCOME
+Proxy Mode
+#Requests | Avg. Response Time | Median Response Time
+100        0.00794 			 2.3842e-06
+200        0.0082 			 2.3842e-06
+300        0.00843 			 2.3842e-06
+400        0.00865 			 2.3842e-06
+500        0.00886 			 2.1458e-06
+600        0.00907 			 2.1458e-06
+700        0.00926 			 2.1458e-06
+800        0.00946 			 2.1458e-06
+900        0.00976 			 2.1458e-06
+1000        0.01008 			 2.1458e-06
+
+Direct Mode
+#Requests | Avg. Response Time | Median Response Time
+100        0.22936 			 0.0020679235
+200        0.45864 			 0.002081871
+300        0.66843 			 0.0020680428
+400        0.88996 			 0.0020662546
+500        1.09829 			 0.002052784
+600        1.31439 			 0.002052784
+700        1.52025 			 0.0020463467
+800        1.73366 			 0.0020483732
+900        1.93301 			 0.0020430088
+1000        2.14307 			 0.0020396709
